@@ -14,6 +14,4 @@ plt.ylabel("Number of Comparisons")
 plt.legend()
 plt.grid(True)
 
-plt.savefig("linear_search_plot.png")
-
 plt.show()
