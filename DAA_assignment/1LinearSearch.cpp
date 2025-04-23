@@ -18,18 +18,12 @@ int linearSearch(int data[], int length, int target, int &comparisonCount) {
 }
 
 int main() {
-    vector<int> bestComparisons;
-    vector<int> worstComparisons;
-    vector<int> avgComparisons;
-    vector<int> dataSizes;
-
     ofstream csvFile("search_comparisons.csv");
     csvFile << "Data Size,Best Case,Worst Case,Average Case\n"; 
 
     srand(time(0)); 
 
     for (int size = 5; size <= 100; size += 5) {
-        dataSizes.push_back(size);
 
         int array[size];
         for (int i = 0; i < size; i++) {
@@ -55,11 +49,7 @@ int main() {
         }
 
         int averageCase = totalComparisons / size;
-
-        bestComparisons.push_back(bestCase);
-        worstComparisons.push_back(worstCase);
-        avgComparisons.push_back(averageCase);
-
+        
         cout << "Data Size: " << size << endl;
         cout << "Best Case Comparisons: " << bestCase << endl;
         cout << "Worst Case Comparisons: " << worstCase << endl;
